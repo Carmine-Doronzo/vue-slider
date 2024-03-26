@@ -37,9 +37,26 @@ const { createApp } = Vue
             }
         ],
         
-      }
+      } 
       
       
+    },
+    methods:{
+        prev(){
+            this.currentImg--
+            if( this.currentImg < 0){
+                this.currentImg = 4
+            }
+
+        },
+
+        next(){
+            this.currentImg--
+            if( this.currentImg > 4 ){
+                this.currentImg = 0
+            }
+
+        }
     }
     
   }).mount('#app')
