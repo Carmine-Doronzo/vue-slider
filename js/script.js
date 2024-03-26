@@ -7,6 +7,7 @@ const { createApp } = Vue
   createApp({
     data() {
       return {
+        intervall:null,
         currentImg : 0,
         slides : 
         [
@@ -42,6 +43,11 @@ const { createApp } = Vue
       
     },
     methods:{
+
+        start(){
+
+        },
+
         prev(){
             this.currentImg--
             if( this.currentImg < 0){
@@ -50,13 +56,28 @@ const { createApp } = Vue
 
         },
 
+        
+
         next(){
             this.currentImg++
             if( this.currentImg > 4 ){
                 this.currentImg = 0
             }
 
-        }
+        },
+
+        
+
+    },
+    mounted(){
+        this.intervall = setInterval(() => {
+            if(this.currentImg !== this.slides.length - 1){
+                this.currentImg++
+            }else{
+                this.currentImg = 0
+            }
+        },3000) 
     }
+
     
   }).mount('#app')
