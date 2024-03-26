@@ -45,21 +45,12 @@ const { createApp } = Vue
     methods:{
 
         stop(){
-            if(this.intervall !== null){
-                clearInterval(this.intervall)
-                intervall = null
-            }
+           clearInterval(this.intervall)
 
         },
 
         start(){
-            this.intervall = setInterval(() => {
-            if(this.currentImg !== this.slides.length - 1){
-                this.currentImg++
-            }else{
-                this.currentImg = 0
-            }
-        },1000) 
+            this.intervall = setInterval(this.next,1000)
 
         },
 
@@ -89,14 +80,8 @@ const { createApp } = Vue
 
     },
      mounted(){
-        this.intervall = setInterval(() => {
-             if(this.currentImg !== this.slides.length - 1){
-                 this.currentImg++
-            }else{
-                 this.currentImg = 0
-            }
-        },3000) 
-    }
+        this.intervall = setInterval(this.next,1000)
+     }
 
     
   }).mount('#app')
