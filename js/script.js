@@ -51,7 +51,7 @@ const { createApp } = Vue
         },
 
         next(){
-            this.currentImg--
+            this.currentImg++
             if( this.currentImg > 4 ){
                 this.currentImg = 0
             }
