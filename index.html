@@ -29,10 +29,10 @@
                 <div class="thumbs">
                     <div class="prev" @click="prev()"></div>
                     <div class="next" @click="next()"></div>
-                    <div class="thumb">
-                        <img src="img/01.webp" alt="Svezia" />
+                    <div class="thumb" @click="currentImg = i" :class="i===currentImg ? 'active' : '' " v-for="(current,i) in slides">
+                        <img v-bind:src="current.image" alt="Svezia" />
                     </div>
-                    <div class="thumb">
+                    <!-- <div class="thumb">
                         <img src="img/02.webp" alt="Ratchet & Clank" />
                     </div>
                     <div class="thumb">
@@ -43,7 +43,7 @@
                     </div>
                     <div class="thumb">
                         <img src="img/05.webp" alt="Avengers" />
-                    </div>
+                    </div> -->
                 </div>
 
             </div>
