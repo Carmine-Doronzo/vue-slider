@@ -44,9 +44,28 @@ const { createApp } = Vue
     },
     methods:{
 
-        start(){
+        stop(){
+            if(this.intervall !== null){
+                clearInterval(this.intervall)
+                intervall = null
+            }
 
         },
+
+        start(){
+            this.intervall = setInterval(() => {
+            if(this.currentImg !== this.slides.length - 1){
+                this.currentImg++
+            }else{
+                this.currentImg = 0
+            }
+        },3000) 
+
+        },
+
+        
+
+        
 
         prev(){
             this.currentImg--

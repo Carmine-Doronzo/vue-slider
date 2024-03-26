@@ -16,7 +16,7 @@
         <div class="container">
             <div class="slider-wrapper" tabindex="0">
 
-                <div class="item" @mouseleave="start()">
+                <div class="item" @mouseover="stop()" @mouseleave="start()">
                     <img v-bind:src="slides[currentImg].image" alt="Spiderman" />
                     <div class="text">
                         <h3>{{slides[currentImg].title}}</h3>
