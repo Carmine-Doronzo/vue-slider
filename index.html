@@ -16,7 +16,7 @@
         <div class="container">
             <div class="slider-wrapper" tabindex="0">
 
-                <div class="item" @mouseover="stop()" @mouseleave="start()">
+                <div class="item" >
                     <img v-bind:src="slides[currentImg].image" alt="Spiderman" />
                     <div class="text">
                         <h3>{{slides[currentImg].title}}</h3>
@@ -27,7 +27,7 @@
                 </div>
                 
 
-                <div class="thumbs">
+                <div class="thumbs" @mouseover="stop()" @mouseleave="start()">
                     <div class="prev" @click="prev()"></div>
                     <div class="next" @click="next()"></div>
                     <div class="thumb" @click="currentImg = i" :class="i===currentImg ? 'active' : '' " v-for="(current,i) in slides">

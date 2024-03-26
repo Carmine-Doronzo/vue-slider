@@ -59,7 +59,7 @@ const { createApp } = Vue
             }else{
                 this.currentImg = 0
             }
-        },3000) 
+        },1000) 
 
         },
 
@@ -88,12 +88,12 @@ const { createApp } = Vue
         
 
     },
-    mounted(){
+     mounted(){
         this.intervall = setInterval(() => {
-            if(this.currentImg !== this.slides.length - 1){
-                this.currentImg++
+             if(this.currentImg !== this.slides.length - 1){
+                 this.currentImg++
             }else{
-                this.currentImg = 0
+                 this.currentImg = 0
             }
         },3000) 
     }
