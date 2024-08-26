@@ -1,0 +1,1 @@
+Simile a js-array-carousel ma utilizzando Vue.js da cdn
